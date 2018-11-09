@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: people-manage-web-dev-service
+  namespace: developer
+  labels:
+    app: people-manage-web-dev-service
+spec:
+  type: NodePort
+  ports:
+    - port: 9001
+      targetPort: 80
+      nodePort: 31300
+  selector:
+    app: people-manage-web-dev

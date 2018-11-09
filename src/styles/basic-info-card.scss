@@ -1,0 +1,41 @@
+.data-card{
+    $height: 420px;
+    .item {
+        position: relative;
+        margin: 0 auto;
+        height: $height;
+        overflow: hidden;
+        border-radius: 5px;
+        border-color: #fff;
+        border-width: 1px;
+        border-style: solid;
+        &:hover .item-text {
+            top: 0;
+        }
+    }
+    .item-img {
+        width: 80%;
+        border-radius: 50%;
+        background: red;
+        border-radius: 5px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .item-text {
+        position: absolute;
+        width: 100%;
+        height: $height;
+        overflow: auto;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        opacity: 0.9;
+        transition: top 0.4s;
+        & > span {
+            font-size: 12px;
+            line-height: 25px;
+            text-indent: 2em;
+        }
+    }
+}

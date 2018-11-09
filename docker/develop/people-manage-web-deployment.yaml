@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: people-manage-web-dev
+  namespace: developer
+  labels:
+    app: people-manage-web-dev
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: people-manage-web-dev
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: people-manage-web-dev
+        version: v1
+    spec:
+      containers:
+      - name: people-manage-web-dev
+        image: reg.cqdev.com/develop/people-manage-web-dev:1.0_20180918_4
+        ports:
+        - containerPort: 80
